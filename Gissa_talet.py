@@ -1,3 +1,11 @@
+'''
+Gissa_talet.PY: Beskrivning av fil/program
+
+__author__  = "Viktor Johansson Nygren"
+__version__ = "1.0.0"
+__email__   = "viktor.johanssonnygren@elev.ga.ntig.se"
+'''
+
 import random as rand
 
 guesses = 7
