@@ -1,5 +1,5 @@
 '''
-Gissa_talet.PY: Beskrivning av fil/program
+Gissa_talet.PY: Gissa talet program
 
 __author__  = "Viktor Johansson Nygren"
 __version__ = "1.0.0"
