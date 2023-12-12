@@ -11,7 +11,6 @@ from colors import bcolors
 import os
 
 guesses = 7
-y = True
 secret = rand.randint(1, 100)
 
 os.system('cls')
@@ -28,7 +27,8 @@ print(bcolors.PURPLE + """
 while True:
     while True:
         try:
-            guess=int(input(bcolors.PURPLE + "Gissa talet mellan 1 och 100\n"))
+            print(bcolors.PURPLE + "Du har", guesses, "gissningar kvar")
+            guess=int(input(bcolors.PURPLE + "Gissa talet mellan 1 och 100\n")) #låter användare gissa och sparar gissningen i variabeln "guess"
             break
         except:
             print("Endast siffror")
@@ -40,11 +40,11 @@ while True:
             again = input("Ja eller nej\n")
             if again.lower() == "ja":
                 print("Vi kör igen")
-                secret = rand.randint(1, 100)
                 guesses = 7
-                break
+                secret = rand.randint(1, 100) #skapar ett nytt tal man ska gissa
+                break #börjar om spelet
             elif again.lower() == "nej":
-                exit()
+                exit() #stänger av spelet
             else:
                 print("Ja eller nej")
 
@@ -54,18 +54,16 @@ while True:
             again = input("Ja eller nej\n")
             if again.lower() == "ja":
                 print("Vi kör igen")
-                guesses = 7
-                secret = rand.randint(1, 100)
-                break
+                guesses = 7 #återställer gissningarna 
+                secret = rand.randint(1, 100) #skapar ett nytt tal man ska gissa
+                break #börjar om spelet
             elif again.lower() == "nej":
-                exit()
+                exit() #stänger av spelet
             else:
                 print("Ja eller nej?")
     elif guess > secret:
         print(bcolors.BLUE + "Talet du ska gissa är mindre än talet du gissade")
         guesses-=1
-        print(bcolors.BLUE + "Du har", guesses, "gissningar kvar")
     elif guess < secret:
         print(bcolors.BLUE + "Talet du ska gissa är större än talet du gissade")
         guesses-=1
-        print(bcolors.BLUE + "Du har", guesses, "gissningar kvar")
