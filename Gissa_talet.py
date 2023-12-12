@@ -33,9 +33,9 @@ while True:
         except:
             print("Endast siffror")
     if guess == secret:
-        guesses-=1
-        print(bcolors.GREEN + "Du gissade rätt på", 7-guesses, "försök")
+        guesses-=1 #tar bort gissningen man gjorde
         while True:
+            print(bcolors.GREEN + "Du gissade rätt på", 7-guesses, "försök")
             print("Vill du spela igen?")
             again = input("Ja eller nej\n")
             if again.lower() == "ja":
@@ -46,11 +46,11 @@ while True:
             elif again.lower() == "nej":
                 exit() #stänger av spelet
             else:
-                print("Ja eller nej")
+                continue
 
     if guesses == 1:
-        print(bcolors.RED + "Du hade fel, talet du skulle gissa var", secret, "\nVill du spela igen?") 
         while True:
+            print(bcolors.RED + "Du hade fel, talet du skulle gissa var", secret, "\nVill du spela igen?") 
             again = input("Ja eller nej\n")
             if again.lower() == "ja":
                 print("Vi kör igen")
@@ -60,10 +60,10 @@ while True:
             elif again.lower() == "nej":
                 exit() #stänger av spelet
             else:
-                print("Ja eller nej?")
+                continue
     elif guess > secret:
         print(bcolors.BLUE + "Talet du ska gissa är mindre än talet du gissade")
-        guesses-=1
+        guesses-=1 #minskar antalet gissningar man har
     elif guess < secret:
         print(bcolors.BLUE + "Talet du ska gissa är större än talet du gissade")
-        guesses-=1
+        guesses-=1 #minskar antalet gissningar man har
